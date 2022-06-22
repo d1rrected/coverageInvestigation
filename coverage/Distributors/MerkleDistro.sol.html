@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for Distributors/MerkleDistro.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">Distributors/</a> MerkleDistro.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">13.04% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>3/23</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">20% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/5</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">13.04% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>3/23</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: GPL-3.0
+&nbsp;
+pragma solidity =0.8.6;
+&nbsp;
+import "openzeppelin-contracts-upgradable-v4/utils/cryptography/MerkleProofUpgradeable.sol";
+import "openzeppelin-contracts-upgradable-v4/access/OwnableUpgradeable.sol";
+import "openzeppelin-contracts-upgradable-v4/proxy/utils/Initializable.sol";
+import "../Interfaces/IMerkleTreeDistributor.sol";
+import "../Interfaces/IDistro.sol";
+&nbsp;
+// Based on: https://github.com/Uniswap/merkle-distributor/blob/master/contracts/MerkleDistributor.sol
+/*
+ * Changelog:
+ *      * Added SPDX-License-Identifier
+ *      * Update to solidity ^0.8.0
+ *      * Update openzeppelin imports
+ *      * Make it upgradable
+ *      * Add claimTo function that allows the owner to claim on behalf of someone
+ *      * Use tokenDistro.allocate instead of token transfer
+ */
+&nbsp;
+contract MerkleDistro is
+    IMerkleTreeDistributor,
+    Initializable,
+    OwnableUpgradeable
+{
+    IDistro public tokenDistro;
+    bytes32 public override merkleRoot;
+&nbsp;
+    // This is a packed array of booleans.
+    mapping(uint256 =&gt; uint256) private claimedBitMap;
+&nbsp;
+    function initialize(IDistro _tokenDistro, bytes32 _merkleRoot)
+        public
+        initializer
+    {
+        __Ownable_init();
+        tokenDistro = _tokenDistro;
+        merkleRoot = _merkleRoot;
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function isClaimed(uint256 index) public view override returns (bool) {</span>
+<span class="cstat-no" title="statement not covered" >        uint256 claimedWordIndex = index / 256;</span>
+<span class="cstat-no" title="statement not covered" >        uint256 claimedBitIndex = index % 256;</span>
+<span class="cstat-no" title="statement not covered" >        uint256 claimedWord = claimedBitMap[claimedWordIndex];</span>
+<span class="cstat-no" title="statement not covered" >        uint256 mask = (1 &lt;&lt; claimedBitIndex);</span>
+<span class="cstat-no" title="statement not covered" >        return claimedWord &amp; mask == mask;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function _setClaimed(uint256 index) private {</span>
+<span class="cstat-no" title="statement not covered" >        uint256 claimedWordIndex = index / 256;</span>
+<span class="cstat-no" title="statement not covered" >        uint256 claimedBitIndex = index % 256;</span>
+<span class="cstat-no" title="statement not covered" >        claimedBitMap[claimedWordIndex] =</span>
+            claimedBitMap[claimedWordIndex] |
+            (1 &lt;&lt; claimedBitIndex);
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function claim(</span>
+        uint256 index,
+        uint256 amount,
+        bytes32[] calldata merkleProof
+    ) external override {
+<span class="cstat-no" title="statement not covered" >        require(!isClaimed(index), "MerkleDistro::claim Drop already claimed.")</span>;
+&nbsp;
+        // Verify the merkle proof.
+<span class="cstat-no" title="statement not covered" >        bytes32 node = keccak256(abi.encodePacked(index, msg.sender, amount));</span>
+<span class="cstat-no" title="statement not covered" >        require(</span>
+            MerkleProofUpgradeable.verify(merkleProof, merkleRoot, node),
+            "MerkleDistro::claim Invalid proof."
+        );
+&nbsp;
+        // Mark it claimed and allocate the tokens
+<span class="cstat-no" title="statement not covered" >        _setClaimed(index)</span>;
+<span class="cstat-no" title="statement not covered" >        tokenDistro.allocate(msg.sender, amount, true)</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        emit Claimed(index, msg.sender, msg.sender, amount);</span>
+    }
+&nbsp;
+    /**
+        This function allows to the owner to claim tokens in behalf of another to a different address
+        It is intended for those cases in which the owner knows that the recipient is no longer in possession of the account.
+     */
+<span class="fstat-no" title="function not covered" >    function claimTo(</span>
+        uint256 index,
+        address account,
+        address recipient,
+        uint256 amount,
+        bytes32[] calldata merkleProof
+    ) external override onlyOwner {
+<span class="cstat-no" title="statement not covered" >        require(!isClaimed(index), "MerkleDistro::claim Drop already claimed.")</span>;
+&nbsp;
+        // Verify the merkle proof.
+<span class="cstat-no" title="statement not covered" >        bytes32 node = keccak256(abi.encodePacked(index, account, amount));</span>
+<span class="cstat-no" title="statement not covered" >        require(</span>
+            MerkleProofUpgradeable.verify(merkleProof, merkleRoot, node),
+            "MerkleDistro::claim Invalid proof."
+        );
+&nbsp;
+        // Mark it claimed and allocate the tokens
+<span class="cstat-no" title="statement not covered" >        _setClaimed(index)</span>;
+<span class="cstat-no" title="statement not covered" >        tokenDistro.allocate(recipient, amount, true)</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        emit Claimed(index, account, recipient, amount);</span>
+    }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Jun 21 2022 22:46:13 GMT-0400 (Eastern Daylight Saving Time)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

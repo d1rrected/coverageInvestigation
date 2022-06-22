@@ -1,0 +1,671 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for UniswapV3Staker/interfaces/IUniswapV3Staker.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">UniswapV3Staker/interfaces/</a> IUniswapV3Staker.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/0</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: GPL-2.0-or-later
+pragma solidity =0.7.6;
+pragma abicoder v2;
+&nbsp;
+import "@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol";
+&nbsp;
+import "@uniswap/v3-core/contracts/interfaces/IUniswapV3Factory.sol";
+import "@uniswap/v3-core/contracts/interfaces/IUniswapV3Pool.sol";
+import "@uniswap/v3-core/contracts/interfaces/IERC20Minimal.sol";
+&nbsp;
+import "@uniswap/v3-periphery/contracts/interfaces/INonfungiblePositionManager.sol";
+import "@uniswap/v3-periphery/contracts/interfaces/IMulticall.sol";
+&nbsp;
+/// @title Uniswap V3 Staker Interface
+/// @notice Allows staking nonfungible liquidity tokens in exchange for reward tokens
+interface IUniswapV3Staker is IERC721Receiver, IMulticall {
+    /// @param rewardToken The token being distributed as a reward
+    /// @param pool The Uniswap V3 pool
+    /// @param startTime The time when the incentive program begins
+    /// @param endTime The time when rewards stop accruing
+    /// @param refundee The address which receives any remaining reward tokens when the incentive is ended
+    struct IncentiveKey {
+        IERC20Minimal rewardToken;
+        IUniswapV3Pool pool;
+        uint256 startTime;
+        uint256 endTime;
+        address refundee;
+    }
+&nbsp;
+    /// @notice The Uniswap V3 Factory
+    function factory() external view returns (IUniswapV3Factory);
+&nbsp;
+    /// @notice The nonfungible position manager with which this staking contract is compatible
+    function nonfungiblePositionManager()
+        external
+        view
+        returns (INonfungiblePositionManager);
+&nbsp;
+    /// @notice The max duration of an incentive in seconds
+    function maxIncentiveDuration() external view returns (uint256);
+&nbsp;
+    /// @notice The max amount of seconds into the future the incentive startTime can be set
+    function maxIncentiveStartLeadTime() external view returns (uint256);
+&nbsp;
+    /// @notice Represents a staking incentive
+    /// @param incentiveId The ID of the incentive computed from its parameters
+    /// @return totalRewardUnclaimed The amount of reward token not yet claimed by users
+    /// @return totalSecondsClaimedX128 Total liquidity-seconds claimed, represented as a UQ32.128
+    /// @return numberOfStakes The count of deposits that are currently staked for the incentive
+    function incentives(bytes32 incentiveId)
+        external
+        view
+        returns (
+            uint256 totalRewardUnclaimed,
+            uint160 totalSecondsClaimedX128,
+            uint96 numberOfStakes
+        );
+&nbsp;
+    /// @notice Returns information about a deposited NFT
+    /// @return owner The owner of the deposited NFT
+    /// @return numberOfStakes Counter of how many incentives for which the liquidity is staked
+    /// @return tickLower The lower tick of the range
+    /// @return tickUpper The upper tick of the range
+    function deposits(uint256 tokenId)
+        external
+        view
+        returns (
+            address owner,
+            uint48 numberOfStakes,
+            int24 tickLower,
+            int24 tickUpper
+        );
+&nbsp;
+    /// @notice Returns information about a staked liquidity NFT
+    /// @param tokenId The ID of the staked token
+    /// @param incentiveId The ID of the incentive for which the token is staked
+    /// @return secondsPerLiquidityInsideInitialX128 secondsPerLiquidity represented as a UQ32.128
+    /// @return liquidity The amount of liquidity in the NFT as of the last time the rewards were computed
+    function stakes(uint256 tokenId, bytes32 incentiveId)
+        external
+        view
+        returns (
+            uint160 secondsPerLiquidityInsideInitialX128,
+            uint128 liquidity
+        );
+&nbsp;
+    /// @notice Returns amounts of reward tokens owed to a given address according to the last time all stakes were updated
+    /// @param rewardToken The token for which to check rewards
+    /// @param owner The owner for which the rewards owed are checked
+    /// @return rewardsOwed The amount of the reward token claimable by the owner
+    function rewards(IERC20Minimal rewardToken, address owner)
+        external
+        view
+        returns (uint256 rewardsOwed);
+&nbsp;
+    /// @notice Creates a new liquidity mining incentive program
+    /// @param key Details of the incentive to create
+    /// @param reward The amount of reward tokens to be distributed
+    function createIncentive(IncentiveKey memory key, uint256 reward) external;
+&nbsp;
+    /// @notice Ends an incentive after the incentive end time has passed and all stakes have been withdrawn
+    /// @param key Details of the incentive to end
+    /// @return refund The remaining reward tokens when the incentive is ended
+    function endIncentive(IncentiveKey memory key)
+        external
+        returns (uint256 refund);
+&nbsp;
+    /// @notice Transfers ownership of a deposit from the sender to the given recipient
+    /// @param tokenId The ID of the token (and the deposit) to transfer
+    /// @param to The new owner of the deposit
+    function transferDeposit(uint256 tokenId, address to) external;
+&nbsp;
+    /// @notice Withdraws a Uniswap V3 LP token `tokenId` from this contract to the recipient `to`
+    /// @param tokenId The unique identifier of an Uniswap V3 LP token
+    /// @param to The address where the LP token will be sent
+    /// @param data An optional data array that will be passed along to the `to` address via the NFT safeTransferFrom
+    function withdrawToken(
+        uint256 tokenId,
+        address to,
+        bytes memory data
+    ) external;
+&nbsp;
+    /// @notice Stakes a Uniswap V3 LP token
+    /// @param key The key of the incentive for which to stake the NFT
+    /// @param tokenId The ID of the token to stake
+    function stakeToken(IncentiveKey memory key, uint256 tokenId) external;
+&nbsp;
+    /// @notice Unstakes a Uniswap V3 LP token
+    /// @param key The key of the incentive for which to unstake the NFT
+    /// @param tokenId The ID of the token to unstake
+    function unstakeToken(IncentiveKey memory key, uint256 tokenId) external;
+&nbsp;
+    /// @notice Transfers `amountRequested` of accrued `rewardToken` rewards from the contract to the recipient `to`
+    /// @param rewardToken The token being distributed as a reward
+    /// @param to The address where claimed rewards will be sent to
+    /// @param amountRequested The amount of reward tokens to claim. Claims entire reward amount if set to 0.
+    /// @return reward The amount of reward tokens claimed
+    function claimReward(
+        IERC20Minimal rewardToken,
+        address to,
+        uint256 amountRequested
+    ) external returns (uint256 reward);
+&nbsp;
+    /// @notice Calculates the reward amount that will be received for the given stake
+    /// @param key The key of the incentive
+    /// @param tokenId The ID of the token
+    /// @return reward The reward accrued to the NFT for the given incentive thus far
+    function getRewardInfo(IncentiveKey memory key, uint256 tokenId)
+        external
+        returns (uint256 reward, uint160 secondsInsideX128);
+&nbsp;
+    /// @notice Event emitted when a liquidity mining incentive has been created
+    /// @param rewardToken The token being distributed as a reward
+    /// @param pool The Uniswap V3 pool
+    /// @param startTime The time when the incentive program begins
+    /// @param endTime The time when rewards stop accruing
+    /// @param refundee The address which receives any remaining reward tokens after the end time
+    /// @param reward The amount of reward tokens to be distributed
+    event IncentiveCreated(
+        IERC20Minimal indexed rewardToken,
+        IUniswapV3Pool indexed pool,
+        uint256 startTime,
+        uint256 endTime,
+        address refundee,
+        uint256 reward
+    );
+&nbsp;
+    /// @notice Event that can be emitted when a liquidity mining incentive has ended
+    /// @param incentiveId The incentive which is ending
+    /// @param refund The amount of reward tokens refunded
+    event IncentiveEnded(bytes32 indexed incentiveId, uint256 refund);
+&nbsp;
+    /// @notice Emitted when ownership of a deposit changes
+    /// @param tokenId The ID of the deposit (and token) that is being transferred
+    /// @param oldOwner The owner before the deposit was transferred
+    /// @param newOwner The owner after the deposit was transferred
+    event DepositTransferred(
+        uint256 indexed tokenId,
+        address indexed oldOwner,
+        address indexed newOwner
+    );
+&nbsp;
+    /// @notice Event emitted when a Uniswap V3 LP token has been staked
+    /// @param tokenId The unique identifier of an Uniswap V3 LP token
+    /// @param liquidity The amount of liquidity staked
+    /// @param incentiveId The incentive in which the token is staking
+    event TokenStaked(
+        uint256 indexed tokenId,
+        bytes32 indexed incentiveId,
+        uint128 liquidity
+    );
+&nbsp;
+    /// @notice Event emitted when a Uniswap V3 LP token has been unstaked
+    /// @param tokenId The unique identifier of an Uniswap V3 LP token
+    /// @param incentiveId The incentive in which the token is staking
+    event TokenUnstaked(uint256 indexed tokenId, bytes32 indexed incentiveId);
+&nbsp;
+    /// @notice Event emitted when a reward token has been claimed
+    /// @param to The address where claimed rewards were sent to
+    /// @param reward The amount of reward tokens claimed
+    event RewardClaimed(address indexed to, uint256 reward);
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Jun 21 2022 22:46:13 GMT-0400 (Eastern Daylight Saving Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>
