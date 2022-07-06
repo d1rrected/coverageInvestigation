@@ -1,6 +1,7 @@
 # SDLC for smart contracts can be separated to phases
 ---
 https://www.youtube.com/watch?v=5bXWnDuIYQs
+https://arxiv.org/pdf/2204.11193.pdf
 
 ---
 
